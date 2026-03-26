@@ -1,0 +1,10 @@
+/.idea/*
+.vs/
+packages/*
+*.sln.DotSettings.user
+*/obj/*
+*/bin/*
+*.csproj.user
+[Bb]in/
+[Oo]bj/
+[Ll]ib/

@@ -1,0 +1,22 @@
+﻿@using System.Text.Json;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a  href="/api/TestClick"
+    class="link-with-post"
+    data-callback="functionForCallback"
+    data-name="dataName"
+>
+    Содержимое ссылки
+</a>
+
+@section Scripts {
+    <script src="/js/Components/linkWithPost.js" type="text/javascript"></script>
+    <script>
+        var dataName = @Html.Raw(JsonSerializer.Serialize(true))
+        function functionForCallback(result){
+            alert(result)
+        }
+    </script>
+}
