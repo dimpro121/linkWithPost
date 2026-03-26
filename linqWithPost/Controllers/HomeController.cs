@@ -23,6 +23,12 @@ namespace linqWithPost.Controllers
             return View();
         }
 
+        public string Test([FromQuery] TestFilter filter)
+        {
+            return filter?.YearMonth?.Display ?? "unknown";
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
