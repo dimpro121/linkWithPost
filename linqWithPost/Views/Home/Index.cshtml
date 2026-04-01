@@ -1,10 +1,10 @@
-﻿@using System.Text.Json;
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
-<a  href="/api/TestClick"
+<a href="/api/Test/TestClick"
     class="link-with-post"
+    title="Содержимое ссылки"
     data-callback="functionForCallback"
     data-name="dataName"
 >
@@ -14,7 +14,10 @@
 @section Scripts {
     <script src="/js/Components/linkWithPost.js" type="text/javascript"></script>
     <script>
-        var dataName = @Html.Raw(JsonSerializer.Serialize(true))
+        var dataName = {
+            name: "тестовые данные для отправки"
+        }
+
         function functionForCallback(result){
             alert(result)
         }
